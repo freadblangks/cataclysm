@@ -10,7 +10,7 @@ time test -d _install || mkdir _install
 time cd _build
 
 # Run CMake Configurations
-time cmake ../ -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS=0 -DSCRIPTS=static -DMODULES=static
+time cmake ../ -DCMAKE_INSTALL_PREFIX=$HOME/cataclysm-server/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS=0 -DSCRIPTS=static
 
 # Compile the Project
 time make -j 6

@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu:21.10
+    runs-on: debian:10
 
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update -y
 
       - name: Install Required Packages
-        run: sudo apt-get update && sudo apt-get install git cmake make gcc g++ clang libmysqlclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev mysql-server libboost-all-dev
+        run: apt-get update && apt-get install git cmake make gcc g++ clang default-libmysqlclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev mariadb-server libace-6.* libace-dev
 
       - name: Update Compilers
         run: source ./apps/ci/ci-compiler-update.sh
