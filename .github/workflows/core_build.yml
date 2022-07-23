@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu:21.10
 
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update -y
 
       - name: Install Required Packages
-        run: sudo apt-get install -y git make cmake clang libssl-dev libbz2-dev build-essential default-libmysqlclient-dev libace-dev
+        run: sudo apt-get update && sudo apt-get install git cmake make gcc g++ clang libmysqlclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev mysql-server libboost-all-dev
 
       - name: Update Compilers
         run: source ./apps/ci/ci-compiler-update.sh
