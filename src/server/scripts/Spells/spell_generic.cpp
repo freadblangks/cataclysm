@@ -4203,7 +4203,7 @@ public:
         {
             PreventDefaultAction();
         }
-        
+
         void HandleAfterRemove(AuraEffect const* aurEff, AuraEffectHandleModes /*mode*/)
         {
             if (GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_DEATH || GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_CANCEL)
@@ -4232,10 +4232,7 @@ PrepareSpellScript(spell_gen_rocket_barrage_SpellScript);
 
     void HandleDamage(SpellEffIndex /*effIndex*/)
     {
-        SetEffectDamage(int32(1 + 
-            (0.25f * GetCaster()->GetTotalAttackPowerValue(BASE_ATTACK)) +
-            (0.429f * GetCaster()->SpellBaseDamageBonusDone(SPELL_SCHOOL_MASK_FIRE)) +
-            (GetCaster()->getLevel() * 2)));
+        SetEffectDamage(int32(1 + (0.25f * GetCaster()->GetTotalAttackPowerValue(BASE_ATTACK)) + (0.429f * GetCaster()->SpellBaseDamageBonusDone(SPELL_SCHOOL_MASK_FIRE)) + (GetCaster()->getLevel() * 2)));
     }
 
     void Register()

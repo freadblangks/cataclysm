@@ -111,7 +111,7 @@ void BattlegroundTP::PostUpdateImpl(uint32 diff)
                             obj->Delete();
                         else
                             TC_LOG_ERROR("bg.battleground", "BattlegroundTP: An error has occurred in PostUpdateImpl: Unknown dropped flag GUID: %u", GUID_LOPART(_droppedFlagGUID[team]));
-                        
+
                         _droppedFlagGUID[team] = 0;
                     }
                     break;
@@ -120,16 +120,16 @@ void BattlegroundTP::PostUpdateImpl(uint32 diff)
             }
         }
 
-        
         /**
-* If both flags are kept, for more than 3 minutes, both cariers should recive an curse (Focused Assault).
-* Every minute afterward, an additional stack will be applied.
-* After 7 minutes, Brutal Assault will be applied in place of Focused Assault.
-*/
+        * If both flags are kept, for more than 3 minutes, both cariers should recive an curse (Focused Assault).
+        * Every minute afterward, an additional stack will be applied.
+        * After 7 minutes, Brutal Assault will be applied in place of Focused Assault.
+        */
+
         if (_bothFlagsKept)
         {
             _flagSpellForceTimer += diff; /// Update the timer
-            
+
             if (_flagSpellForceTimer >= ((1 + _flagDebuffState) * MINUTE * IN_MILLISECONDS) && _flagDebuffState < 10)///< More than 3 minutes and amount of stacks from debuff lower than 10
             {
                 if (_flagDebuffState <= 5) ///< Cast on player Focused Assaultupposed to maintain number of stacks for debuff
@@ -233,12 +233,12 @@ bool BattlegroundTP::SetupBattleground()
         TC_LOG_ERROR("misc", "BatteGroundTP: Failed to spawn some objects. Battleground not created!");
         return false;
     }
-    
+
     /// Load spirit guides
     for (uint32 i = TP_GRAVEYARD_START_ALLIANCE; i < TP_MAX_GRAVEYARDS; ++i)
     {
         WorldSafeLocsEntry const* grave = sWorldSafeLocsStore.LookupEntry(BG_TP_GraveyardIds[i]);
-        
+
         if (grave)
         {
             uint8 team = i % 2; ///< If 0 team == TEAM_ALLIANCE else TEAM_HORDE
@@ -281,11 +281,11 @@ void BattlegroundTP::Reset()
 
 void BattlegroundTP::FillInitialWorldStates(WorldPacket& data)
 {
-    
+
     /// Show how many flags had been captured
     data << uint32(BG_TP_FLAG_CAPTURES_ALLIANCE) << uint32(GetTeamScore(TEAM_ALLIANCE));
     data << uint32(BG_TP_FLAG_CAPTURES_HORDE) << uint32(GetTeamScore(TEAM_HORDE));
-    
+
     /// Show MAX number of flags (x/3)
     data << uint32(BG_TP_FLAG_CAPTURES_MAX) << uint32(BG_TP_MAX_TEAM_SCORE);
 
@@ -483,7 +483,7 @@ void BattlegroundTP::EventPlayerDroppedFlag(Player* source)
         TC_LOG_ERROR("bg.battleground", "BattlegroundTP: An error have occured in EventPlayerDroppedFlag, player: %u who carried the flag is not the flag keeper: %u.", source->GetGUID(), _flagKeepers[team ^ 1]);
         return;
     }
-    
+
     source->RemoveAurasDueToSpell(TP_SPELL_FOCUSED_ASSAULT);
     source->RemoveAurasDueToSpell(TP_SPELL_BRUTAL_ASSAULT);
 
@@ -524,7 +524,7 @@ void BattlegroundTP::EventPlayerClickedOnFlag(Player* source, GameObject* target
 
                     /// Update flag state + world state
                     UpdateFlagState(team ^ 1, BG_TP_FLAG_STATE_ON_PLAYER, source->GetGUID());
-                
+
                     /// "Pick up the flag"
                     source->CastSpell(source, team == TEAM_ALLIANCE ? BG_TP_SPELL_HORDE_FLAG : BG_TP_SPELL_ALLIANCE_FLAG , true);
 
@@ -553,10 +553,10 @@ void BattlegroundTP::EventPlayerClickedOnFlag(Player* source, GameObject* target
                 {
                     /// Reapply flag on target
                     source->CastSpell(source, team == TEAM_ALLIANCE? BG_TP_SPELL_HORDE_FLAG : BG_TP_SPELL_ALLIANCE_FLAG, true);
-                    
+
                     /// Update flag state
                     UpdateFlagState(team ^ 1, BG_TP_FLAG_STATE_ON_PLAYER, source->GetGUID());
-                    
+
                     /// Reapply debuff
                     if (_flagDebuffState && _flagDebuffState < 6)
                         source->CastCustomSpell(TP_SPELL_FOCUSED_ASSAULT, SPELLVALUE_AURA_STACK, _flagDebuffState, source);
@@ -691,7 +691,7 @@ void BattlegroundTP::RespawnFlag(uint32 team, bool captured)
         _flagDebuffState = 0;
         _flagSpellForceTimer = 0;
     }
-    
+
     PlaySoundToAll(BG_TP_SOUND_FLAGS_RESPAWNED);
 
     UpdateFlagState(team, BG_TP_FLAG_STATE_ON_BASE);

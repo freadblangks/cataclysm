@@ -2659,7 +2659,7 @@ bool Player::IsImmunedToSpellEffect(SpellInfo const* spellInfo, uint32 index) co
         return true;
     if (spellInfo->Effects[index].IsEffect(SPELL_EFFECT_ATTACK_ME))
         return true;
-    
+
     return Unit::IsImmunedToSpellEffect(spellInfo, index);
 }
 
@@ -9678,7 +9678,7 @@ void Player::SendLoot(uint64 guid, LootType loot_type)
             // creature_loot_template.entry = 1 Player Corpse Loot
             if (Battleground* bg = GetBattleground())
                 if (bg->isBattleground() || bg->isRatedBattleground())
-                    loot->FillLoot(1, LootTemplates_Creature, this, true);            
+                    loot->FillLoot(1, LootTemplates_Creature, this, true);
             // It may need a better formula
             // Now it works like this: lvl10: ~6copper, lvl70: ~9silver
             bones->loot.gold = uint32(urand(50, 150) * 0.016f * pow(float(pLevel)/5.76f, 2.5f) * sWorld->getRate(RATE_DROP_MONEY));
@@ -13790,13 +13790,13 @@ void Player::SwapItem(uint16 src, uint16 dst)
     // now do moves, remove...
     bool slot1Switch = false;
     bool slot2Switch = false;
-    
+
     if (IsEquipmentPos(src))
         slot1Switch = true;
 
     if (IsEquipmentPos(dst))
         slot2Switch = true;
-    
+
     RemoveItem(dstbag, dstslot, false, slot1Switch);
     RemoveItem(srcbag, srcslot, false, slot2Switch);
 

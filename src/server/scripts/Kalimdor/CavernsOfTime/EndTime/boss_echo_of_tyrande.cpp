@@ -129,7 +129,7 @@ public:
     boss_echo_of_tyrande() : CreatureScript("boss_echo_of_tyrande") { }
     struct boss_echo_of_tyrandeAI : public BossAI
     {
-        boss_echo_of_tyrandeAI(Creature* creature) : BossAI(creature, BOSS_ECHO_OF_TYRANDE) 
+        boss_echo_of_tyrandeAI(Creature* creature) : BossAI(creature, BOSS_ECHO_OF_TYRANDE)
         {
             creature->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_KNOCK_BACK, true);
             creature->ApplySpellImmune(0, IMMUNITY_MECHANIC, MECHANIC_GRIP, true);

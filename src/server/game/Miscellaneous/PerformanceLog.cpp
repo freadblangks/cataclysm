@@ -7,7 +7,7 @@ PerformanceEntry::PerformanceEntry(const char *name, uint8 lengthID)
 {
     strcpy(m_name, name);
     m_id = lengthID;
-    
+
     m_totalTime = 0;
     m_lastTime = getMSTime();
 }

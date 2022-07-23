@@ -45,7 +45,7 @@ class boss_lord_godfrey : public CreatureScript
 
         struct boss_lord_godfreyAI : public BossAI
         {
-            boss_lord_godfreyAI(Creature* creature) : BossAI(creature, DATA_LORD_GODFREY_EVENT) 
+            boss_lord_godfreyAI(Creature* creature) : BossAI(creature, DATA_LORD_GODFREY_EVENT)
             {
                 me->ApplySpellImmune(0, IMMUNITY_ID, SPELL_PISTOL_BARRAGE_DAMAGE, true);
                 me->ApplySpellImmune(0, IMMUNITY_ID, 93784, true);

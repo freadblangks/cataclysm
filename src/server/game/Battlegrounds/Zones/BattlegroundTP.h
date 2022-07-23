@@ -235,7 +235,7 @@ private:
         /// Scorekeeping
         /// Add 1 point after a team captures the flag
         void AddPoint(uint32 teamID) { ++m_TeamScores[GetTeamIndexByTeamId(teamID)]; }
-        
+
         /// Flag Events
         /// Update Flag state of one team, if the flag is in base, is waitng for respawn, is on player or on ground(if a player droped it)
         void UpdateFlagState(uint32 team, uint32 value, uint32 flagKeeperGUID = 0);
@@ -255,8 +255,6 @@ private:
         bool _bothFlagsKept; ///< shows if both flags are kept
         uint8 _flagDebuffState; ///< This maintain the debuff state of the flag carrier. If the flag is on a player for more then X minutes, the player will be cursed with an debuff. (0 - No debuff, 1 - Focus assault, 2 - Brutal assault)
         uint8 _minutesElapsed; ///< Elapsed time since the beginning of the battleground (It counts as well the beginning time(when the doors are closed))
-        
-        
 };
 
 #endif

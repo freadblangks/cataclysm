@@ -39,7 +39,7 @@ enum Spells
     SPELL_SAND_HOURGLASS                = 102668,
 
     // GameObject Entry: 209249
-    SPELL_REWIND_TIME                   = 101590, // 01:35:14.316 Die Mächte des Stundenglases können mir nichts anhaben! (really ? german is a so beautifull language XDDDD
+    SPELL_REWIND_TIME                   = 101590, // 01:35:14.316 Die MÃ¤chte des Stundenglases kÃ¶nnen mir nichts anhaben! (really ? german is a so beautifull language XDDDD
     SPELL_PLAYERS_REWIND_TIME           = 101591, // effect 0 should trigger SPELL_PLAYERS_BLESSING or 108026 spell_dbc (target area ally)
     SPELL_PLAYERS_BLESSING              = 102364,
 
@@ -105,7 +105,7 @@ public:
 
     struct boss_murozondAI : public BossAI
     {
-        boss_murozondAI(Creature* creature) : BossAI(creature, BOSS_MUROZOND) 
+        boss_murozondAI(Creature* creature) : BossAI(creature, BOSS_MUROZOND)
         {
             trashCount = 0;
             trashSummoned = false;

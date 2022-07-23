@@ -74,7 +74,7 @@ class boss_baron_silverlaine : public CreatureScript
                 Talk(SAY_DEATH);
             }
 
-            void JustSummoned(Creature* summon) 
+            void JustSummoned(Creature* summon)
             {
                 BossAI::JustSummoned(summon);
                 if (summon->GetEntry() == 50934)
@@ -181,7 +181,7 @@ public:
             _instance = GetCaster()->GetInstanceScript();
             return _instance != NULL;
         }
-        
+
         void AfterCast(SpellEffIndex /*effIndex*/)
         {
             if (Creature* silverlaine = ObjectAccessor::GetCreature(*GetCaster(), _instance->GetData64(DATA_BARON_SILVERLAINE)))

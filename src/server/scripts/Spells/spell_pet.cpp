@@ -811,7 +811,7 @@ public:
         void Register()
         {
             OnEffectLaunchTarget += SpellEffectFn(spell_hun_pet_damage_spells_SpellScript::HandleHit, EFFECT_0, SPELL_EFFECT_SCHOOL_DAMAGE);
-            
+
             if (m_scriptSpellId == 83381)
                 OnEffectHitTarget += SpellEffectFn(spell_hun_pet_damage_spells_SpellScript::HandleKillCommand, EFFECT_0, SPELL_EFFECT_SCHOOL_DAMAGE);
         }
@@ -1452,9 +1452,7 @@ public:
                 Position comparePos;
                 (*itr)->GetPosition(&comparePos);
                 float exactDist = casterPos.GetExactDist(&comparePos);
-                if (exactDist < closestDistance 
-                    && !((*itr)->ToUnit() && (*itr)->ToUnit()->HasBreakableByDamageCrowdControlAura()) 
-                    && !((*itr)->ToUnit() && (*itr)->ToUnit()->GetCreatureType() == CREATURE_TYPE_CRITTER))
+                if (exactDist < closestDistance && !((*itr)->ToUnit() && (*itr)->ToUnit()->HasBreakableByDamageCrowdControlAura()) && !((*itr)->ToUnit() && (*itr)->ToUnit()->GetCreatureType() == CREATURE_TYPE_CRITTER))
                 {
                     closestDistance = exactDist;
                     closestTarget = (*itr);

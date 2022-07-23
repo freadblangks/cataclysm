@@ -1724,7 +1724,7 @@ void WorldSession::HandleReforgeItemOpcode(WorldPacket& recvData)
         SendReforgeResult(false);
         return;
     }
-    
+
     // prevent cheating
     if (item->IsBroken())
     {

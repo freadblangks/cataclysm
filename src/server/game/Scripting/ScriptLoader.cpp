@@ -879,7 +879,7 @@ void AddWorldScripts()
     AddSC_npc_taxi();
     AddSC_achievement_scripts();
     AddSC_chat_log();
-	AddSC_CdReset();
+    AddSC_CdReset();
 #endif
 }
 

@@ -536,7 +536,7 @@ struct QualityCMP{
     }
 };
 struct LevelCMP{
-    
+
     bool sort;
     bool operator() ( const AuctionsItems * s1,const AuctionsItems * s2)
     {
@@ -544,7 +544,7 @@ struct LevelCMP{
     }
 };
 struct ExpireCMP{
-    
+
     bool sort;
     bool operator() ( const AuctionsItems * s1,const AuctionsItems * s2)
     {
@@ -552,7 +552,7 @@ struct ExpireCMP{
     }
 };
 struct NameCMP{
-    
+
     bool sort;
     bool operator() ( const AuctionsItems * s1,const AuctionsItems * s2)
     {
@@ -560,7 +560,7 @@ struct NameCMP{
     }
 };
 struct BidCMD{
-    
+
     bool sort;
     bool operator() ( const AuctionsItems * s1,const AuctionsItems * s2)
     {
@@ -570,73 +570,69 @@ struct BidCMD{
 
 
 
-void AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player,
-                                               std::wstring const& wsearchedname, uint32 listfrom, uint8 levelmin, uint8 levelmax, uint8 usable,
-                                               uint32 inventoryType, uint32 itemClass, uint32 itemSubClass, uint32 quality,uint8 filter,uint8 sort,
-                                               uint32& count, uint32& totalcount)
+void AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player, std::wstring const& wsearchedname, uint32 listfrom, uint8 levelmin, uint8 levelmax, uint8 usable, uint32 inventoryType, uint32 itemClass, uint32 itemSubClass, uint32 quality,uint8 filter,uint8 sort, uint32& count, uint32& totalcount)
 {
     int loc_idx = player->GetSession()->GetSessionDbLocaleIndex();
     int locdbc_idx = player->GetSession()->GetSessionDbcLocale();
-    
-    
+
     std::vector<AuctionsItems*> items;
-    
+
     for (AuctionEntryMap::const_iterator itr = AuctionsMap.begin(); itr != AuctionsMap.end(); ++itr)
     {
         AuctionEntry* Aentry = itr->second;
         Item* item = sAuctionMgr->GetAItem(Aentry->itemGUIDLow);
         if (!item)
             continue;
-        
+
         ItemTemplate const* proto = item->GetTemplate();
-        
+
         if (itemClass != 0xffffffff && proto->Class != itemClass)
             continue;
-        
+
         if (itemSubClass != 0xffffffff && proto->SubClass != itemSubClass)
             continue;
-        
+
         if (inventoryType != 0xffffffff && proto->InventoryType != inventoryType)
             continue;
-        
+
         if (quality != 0xffffffff && proto->Quality != quality)
             continue;
-        
+
         if (levelmin != 0x00 && (proto->RequiredLevel < levelmin || (levelmax != 0x00 && proto->RequiredLevel > levelmax)))
             continue;
-        
+
         if (usable != 0x00 && player->CanUseItem(item) != EQUIP_ERR_OK)
             continue;
-        
-        // Allow search by suffix (ie: of the Monkey) or partial name (ie: Monkey)
+
+            // Allow search by suffix (ie: of the Monkey) or partial name (ie: Monkey)
             // No need to do any of this if no search term was entered
             if (!wsearchedname.empty())
             {
                 std::string name = proto->Name1;
                 if (name.empty())
                     continue;
-                
+
                 // local name
                     if (loc_idx >= 0)
                         if (ItemLocale const* il = sObjectMgr->GetItemLocale(proto->ItemId))
                             ObjectMgr::GetLocaleString(il->Name, loc_idx, name);
-                        
-                        // DO NOT use GetItemEnchantMod(proto->RandomProperty) as it may return a result
+
+                            // DO NOT use GetItemEnchantMod(proto->RandomProperty) as it may return a result
                             //  that matches the search but it may not equal item->GetItemRandomPropertyId()
                             //  used in BuildAuctionInfo() which then causes wrong items to be listed
                             int32 propRefID = item->GetItemRandomPropertyId();
-                            
+
                             if (propRefID)
                             {
                                 // Append the suffix to the name (ie: of the Monkey) if one exists
                                 // These are found in ItemRandomProperties.dbc, not ItemRandomSuffix.dbc
                                 //  even though the DBC names seem misleading
                                 const ItemRandomPropertiesEntry* itemRandProp = sItemRandomPropertiesStore.LookupEntry(propRefID);
-                                
+
                                 if (itemRandProp)
                                 {
                                     char* temp = itemRandProp->nameSuffix;
-                                    
+
                                     // dbc local name
                                     if (temp)
                                     {
@@ -647,20 +643,20 @@ void AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
                                     }
                                 }
                             }
-                            
+
                             // Perform the search (with or without suffix)
                             if (!Utf8FitTo(name, wsearchedname))
                                 continue;
             }
-            
+
             AuctionsItems* temp = new AuctionsItems;
             temp->Aentry = Aentry;
             temp->item = item;
             temp->proto = proto;
             items.push_back(temp);
-            
+
     }
-    
+
     switch(filter){
         case 0:
         {
@@ -669,7 +665,7 @@ void AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
             std::sort(items.begin(),items.end(),tmp);
         }
         break;
-        case 1: 
+        case 1:
         {
             QualityCMP tmp;
             tmp.sort = sort;
@@ -698,15 +694,14 @@ void AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
         }
         break;
     }
-    
+
     totalcount = items.size();
-    
+
     for(uint32 i = listfrom; count < 50 && i < items.size(); i++){
         ++count;
         AuctionsItems * h = items.operator[](i);
         h->Aentry->BuildAuctionInfo(data);
     }
-    
 }
 
 //this function inserts to WorldPacket auction's data

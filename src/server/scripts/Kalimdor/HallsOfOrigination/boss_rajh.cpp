@@ -184,7 +184,7 @@ public:
         {
             if (type != POINT_MOTION_TYPE)
                 return;
-            
+
             switch (pointId)
             {
                 case POINT_CENTER:
@@ -301,17 +301,17 @@ public:
 
     struct npc_solar_wind_vortexAI : public ScriptedAI
     {
-        npc_solar_wind_vortexAI(Creature* creature) : ScriptedAI(creature) 
+        npc_solar_wind_vortexAI(Creature* creature) : ScriptedAI(creature)
         {
             instance = me->GetInstanceScript();
         }
-        
+
         void JustSummoned(Creature* summon)
         {
             summon->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_IMMUNE_TO_NPC | UNIT_FLAG_DISABLE_MOVE);
             summon->AI()->DoCast(SPELL_SOLAR_FIRE);
         }
-        
+
         void IsSummonedBy(Unit* /*summoner*/)
         {
             me->SetDisplayId(me->GetCreatureTemplate()->Modelid1);
@@ -368,7 +368,7 @@ public:
         {
             me->SetReactState(REACT_PASSIVE);
             me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_IMMUNE_TO_NPC);
-            DoCast(me, SPELL_SUN);   
+            DoCast(me, SPELL_SUN);
             me->SetHover(true);
             events.ScheduleEvent(EVENT_MOVE_DOWN, 5000);
             events.ScheduleEvent(EVENT_DESPAWN, 11000);

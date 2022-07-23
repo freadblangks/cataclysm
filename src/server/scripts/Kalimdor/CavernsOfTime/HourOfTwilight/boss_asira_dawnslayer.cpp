@@ -253,7 +253,7 @@ const G3D::Vector3 lifeWardenBossPath[lifeWardenBossPathSize] =
 
 uint32 const lifeWardenBossOutroPathSize = 3;
 const G3D::Vector3 lifeWardenBossOutroPath[lifeWardenBossOutroPathSize] =
-{ 
+{
     { 4206.213f, 472.6389f, 73.64722f },
     { 4138.598f, 523.4948f, 73.64722f },
     { 4054.506f, 549.8229f, 73.64722f }
@@ -291,7 +291,7 @@ public:
 
     struct boss_asira_dawnslayerAI : public BossAI
     {
-        boss_asira_dawnslayerAI(Creature* creature) : BossAI(creature, DATA_ASIRA) 
+        boss_asira_dawnslayerAI(Creature* creature) : BossAI(creature, DATA_ASIRA)
         {
             me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_PC | UNIT_FLAG_IMMUNE_TO_NPC);
             me->SetReactState(REACT_PASSIVE);
@@ -390,7 +390,7 @@ public:
 
     struct npc_asira_drakeAI : public ScriptedAI
     {
-        npc_asira_drakeAI(Creature* creature) : ScriptedAI(creature), instance(me->GetInstanceScript()) 
+        npc_asira_drakeAI(Creature* creature) : ScriptedAI(creature), instance(me->GetInstanceScript())
         {
             isOutroPath = false;
         }

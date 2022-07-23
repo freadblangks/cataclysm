@@ -288,7 +288,7 @@ class npc_glob_of_viscidus : public CreatureScript
             {
                 if (type != POINT_MOTION_TYPE)
                     return;
-                
+
                 if (id == ROOM_CENTER)
                 {
                     DoCast(me, SPELL_REJOIN_VISCIDUS);

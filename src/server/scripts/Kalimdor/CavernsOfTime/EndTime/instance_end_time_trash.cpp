@@ -18,7 +18,7 @@ enum Spells
 {
     SPELL_ARCANE_BLAST  = 101816,
     SPELL_BLINK         = 101812,
-    
+
     SPELL_FACE_KICK     = 101888,
     SPELL_PUTRID_SPIT   = 102063,
     SPELL_WALL_OF_DEAD  = 101891,

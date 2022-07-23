@@ -246,7 +246,7 @@ IntroElements point_intro[9] =
     { {3547.737f, 272.7934f, -115.9649f, 0.0f}, 7000}
 };
 
-Position TentaclesSpawnPositions[]  = 
+Position TentaclesSpawnPositions[]  =
 {
     {3901.132f, 281.1990f, 4.156386f, 0.0f},
     {3897.162f, 276.6766f, 3.435897f, 0.0f},
@@ -1305,7 +1305,7 @@ public:
     class spell_hot_purifying_light_dummy_SpellScript : public SpellScript
     {
         PrepareSpellScript(spell_hot_purifying_light_dummy_SpellScript);
-        
+
         bool Load()
         {
             return GetCaster()->GetTypeId() == TYPEID_UNIT;

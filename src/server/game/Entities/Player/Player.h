@@ -1342,7 +1342,7 @@ class Player : public Unit, public GridObject<Player>
         static bool BuildEnumData(PreparedQueryResult result, ByteBuffer* dataBuffer, ByteBuffer* bitBuffer);
 
         bool IsImmunedToSpellEffect(SpellInfo const* spellInfo, uint32 index) const override; // override Unit::IsImmunedToSpellEffect
-        
+
         void SetInWater(bool apply);
 
         bool IsInWater() const { return m_isInWater; }

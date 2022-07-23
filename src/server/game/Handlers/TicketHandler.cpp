@@ -46,7 +46,7 @@ void WorldSession::HandleSubmitComplainOpcode(WorldPacket & recvData)
     guid[2] = recvData.ReadBit();
     guid[4] = recvData.ReadBit();
     guid[7] = recvData.ReadBit();
-     
+
     //guid:4 options:0 length :0;posY:648.581055 ,posX:-8851.486328 ,posZ:96.454063 ,MAP:0 ,poso:2.151366 , unk:0 text:           //SPAM
     //guid:4 options:10 length :0;posY:648.581055 ,posX:-8851.486328 ,posZ:96.454063 ,MAP:0 ,poso:2.151366 , unk:0 text:          //Ausdrucksweise
 
@@ -67,8 +67,8 @@ void WorldSession::HandleSubmitComplainOpcode(WorldPacket & recvData)
     recvData.ReadByteSeq(guid[4]);
 
     recvData >> posY;
-    recvData >> posZ;        
-    recvData >> posX;    
+    recvData >> posZ;
+    recvData >> posX;
     recvData >> mapID;
     recvData >> posO;
 
@@ -80,12 +80,11 @@ void WorldSession::HandleSubmitComplainOpcode(WorldPacket & recvData)
     // TC_LOG_INFO("server.loading","CMSG_SUBMIT_COMPLAIN:: count:%u guid:%u option:%u length :%u;posY:%f ,posX:%f ,posZ:%f ,MAP:%u ,poso:%f  text:%s",count,guid,options,length,posY,posX,posZ,mapID,posO,text.c_str());
 
     switch(options)
-    {    
+    {
         case COMPLAIN_CHEATER:
         case COMPLAIN_PLAYER_NAME:
         case COMPLAIN_GUILD_NAME:
         case COMPLAIN_ARENA_NAME:
-            
             break;
         case COMPLAIN_SPAM:
         case COMPLAIN_BAD_LANG:
@@ -113,7 +112,7 @@ void WorldSession::HandleSubmitBugOpcode(WorldPacket & recvData)
 
     uint32 length = recvData.ReadBits(12);
     std::string bug = recvData.ReadString(length);
-    
+
     recvData >> posY;
     recvData >> posZ;
     recvData >> posX;
@@ -122,7 +121,7 @@ void WorldSession::HandleSubmitBugOpcode(WorldPacket & recvData)
 
     SQLTransaction trans = SQLTransaction(NULL);
 
-    //    0     1      2      3          4      5      6     7     8          
+    //    0     1      2      3          4      5      6     7     8
     // realm, guid, message, createTime, pool, mapId, posX, posY, posZ
     uint8 index = 0;
     PreparedStatement* stmt = LoginDatabase.GetPreparedStatement(LOGIN_INS_BUG_TICKET);

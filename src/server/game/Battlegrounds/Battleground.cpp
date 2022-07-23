@@ -290,7 +290,7 @@ void Battleground::Update(uint32 diff)
             else
             {
                 _ProcessRessurect(diff);
-                if (!isRatedBattleground() && sBattlegroundMgr->GetPrematureFinishTime() 
+                if (!isRatedBattleground() && sBattlegroundMgr->GetPrematureFinishTime()
                     && (GetPlayersCountByTeam(ALLIANCE) < GetMinPlayersPerTeam() || GetPlayersCountByTeam(HORDE) < GetMinPlayersPerTeam()))
                     _ProcessProgress(diff);
                 else if (m_PrematureCountDown)
@@ -1749,7 +1749,7 @@ void Battleground::AddPlayer(Player* player)
             else
                 player->CastSpell(player, 81744, true); // Horde buff
         }
-        
+
         if (GetStatus() == STATUS_WAIT_JOIN)                 // not started yet
         {
             player->CastSpell(player, SPELL_PREPARATION, true);   // reduces all mana cost of spells.

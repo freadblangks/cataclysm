@@ -124,7 +124,7 @@ class boss_setesh : public CreatureScript
             {
                 if (type != POINT_MOTION_TYPE)
                     return;
-                
+
                 switch (pointId)
                 {
                     case POINT_PORTAL:
@@ -444,8 +444,8 @@ public:
 
         void FilterTargets(std::list<WorldObject*>& targets)
         {
-            targets.remove_if([](WorldObject* target) 
-            { 
+            targets.remove_if([](WorldObject* target)
+            {
                 if (target->GetTypeId() != TYPEID_UNIT || target->ToUnit()->HasAura(SPELL_CHAOS_BLAST_AURA) || target->GetEntry() != 41041)
                     return true;
                 return false;

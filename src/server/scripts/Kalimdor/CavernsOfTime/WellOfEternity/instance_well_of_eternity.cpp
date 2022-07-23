@@ -22,7 +22,7 @@
 DoorData const doorData[] =
 {
     { GO_LARGE_FIREWALL_DOOR,       DATA_PEROTHARN,     DOOR_TYPE_ROOM,         BOUNDARY_NONE },
-    { GO_SMALL_FIREWALL_DOOR,       DATA_PEROTHARN,     DOOR_TYPE_ROOM,         BOUNDARY_NONE },  
+    { GO_SMALL_FIREWALL_DOOR,       DATA_PEROTHARN,     DOOR_TYPE_ROOM,         BOUNDARY_NONE },
     { GO_INVISIBLE_FIREWALL_DOOR,   DATA_PEROTHARN,     DOOR_TYPE_PASSAGE,      BOUNDARY_NONE },
     { 0,                        0,                      DOOR_TYPE_ROOM,         BOUNDARY_NONE }
 };

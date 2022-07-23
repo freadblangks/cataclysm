@@ -807,7 +807,7 @@ class spell_dru_stampede : public SpellScriptLoader
                         }
                         break;
                     case 49376: // Feral charge cat
-                    case 5217:  // Tiger's Fury 
+                    case 5217:  // Tiger's Fury
                         if (AuraEffect* stampede = caster->GetDummyAuraEffect(SPELLFAMILY_DRUID, 3930, EFFECT_1))
                         {
                             switch (stampede->GetAmount())
@@ -1169,7 +1169,7 @@ class spell_dru_emp_touch : public SpellScriptLoader
                         }
                     }
 
-                    // Empowered Touch now also affects Regrowth. 
+                    // Empowered Touch now also affects Regrowth.
                     // In addition, after Tree of Life is no longer active, this talent will only refresh the most recently cast or refreshed Lifebloom, and will not refresh other copies of Lifebloom.
                     if (GetSpellInfo()->Id == 33763 || GetCaster()->HasAura(33891) || (latestFlower && (latestFlower->GetUnitOwner() == GetHitUnit())))
                         if (roll_chance_i(aurEff->GetAmount()))
@@ -1398,7 +1398,7 @@ public:
             OnEffectProc += AuraEffectProcFn(spell_dru_glyph_of_starfire_proc_AuraScript::HandleEffectProc, EFFECT_0, SPELL_AURA_DUMMY);
         }
     };
-    
+
     AuraScript* GetAuraScript() const
     {
         return new spell_dru_glyph_of_starfire_proc_AuraScript();

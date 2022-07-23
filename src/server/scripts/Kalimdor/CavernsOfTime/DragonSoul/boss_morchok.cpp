@@ -77,7 +77,7 @@ enum Phases
     PHASE_TWO = 2
 };
 
-enum VehicleTargetHandling 
+enum VehicleTargetHandling
 {
     DATA_VEHICLE_TARGET    = 100,
     VEHICLE_TARGET_MORCHOK = 200,
@@ -719,7 +719,7 @@ public:
             }
             GetCaster()->SetObjectScale(npcSize);
         }
-        
+
         void HandleDummy(SpellEffIndex /*effIndex*/)
         {
             if (Unit* target = GetHitUnit())

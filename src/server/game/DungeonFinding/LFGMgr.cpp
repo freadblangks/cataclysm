@@ -226,7 +226,7 @@ void LFGMgr::LoadLFGDungeons(bool reload /* = false */)
         LFGDungeonEntry const* dungeon = sLFGDungeonStore.LookupEntry(i);
         if (!dungeon)
             continue;
-        
+
         switch (dungeon->type)
         {
             case LFG_TYPE_DUNGEON:
@@ -1373,7 +1373,7 @@ void LFGMgr::UpdateBoot(uint64 guid, bool accept)
     bool isLfrGroup = false;
     if (Group* group = sGroupMgr->GetGroupByGUID(GUID_LOPART(gguid)))
         isLfrGroup = group->isLFRGroup();
-            
+
     // if we don't have enough votes (agree or deny) do nothing
     if (agreeNum < (isLfrGroup ? LFR_GROUP_KICK_VOTES_NEEDED : LFG_GROUP_KICK_VOTES_NEEDED) && (votesNum - agreeNum) < (isLfrGroup ? LFR_GROUP_KICK_VOTES_NEEDED : LFG_GROUP_KICK_VOTES_NEEDED))
         return;

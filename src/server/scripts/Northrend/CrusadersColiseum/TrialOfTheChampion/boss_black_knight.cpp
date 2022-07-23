@@ -65,7 +65,7 @@ enum eSpells
     SPELL_CLAW_H            = 67879,
     SPELL_LEAP              = 67749,
     SPELL_LEAP_H            = 67880,
-    
+
     SPELL_KILL_CREDIT       = 68663
 };
 
@@ -343,7 +343,7 @@ public:
         {
             Talk(SAY_DEATH);
 
-            DoCast(me, SPELL_KILL_CREDIT);            
+            DoCast(me, SPELL_KILL_CREDIT);
 
             if (instance)
             {

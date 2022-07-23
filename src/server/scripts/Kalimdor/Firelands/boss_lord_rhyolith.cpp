@@ -981,7 +981,7 @@ class npc_volcano_firelands : public CreatureScript // 52582
 
     struct npc_volcano_firelandsAI : public ScriptedAI
     {
-        npc_volcano_firelandsAI(Creature* creature) : ScriptedAI(creature), instance(creature->GetInstanceScript()), summons(creature) 
+        npc_volcano_firelandsAI(Creature* creature) : ScriptedAI(creature), instance(creature->GetInstanceScript()), summons(creature)
         {
             memset(FirePath, 0, sizeof(FirePath));
         }

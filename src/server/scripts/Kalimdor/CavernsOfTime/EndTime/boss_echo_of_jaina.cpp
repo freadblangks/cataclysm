@@ -61,7 +61,7 @@ public:
     boss_echo_of_jaina() : CreatureScript("boss_echo_of_jaina") { }
     struct boss_echo_of_jainaAI : public BossAI
     {
-        boss_echo_of_jainaAI(Creature* creature) : BossAI(creature, BOSS_ECHO_OF_JAINA) 
+        boss_echo_of_jainaAI(Creature* creature) : BossAI(creature, BOSS_ECHO_OF_JAINA)
         {
             creature->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_KNOCK_BACK, true);
             creature->ApplySpellImmune(0, IMMUNITY_MECHANIC, MECHANIC_GRIP, true);

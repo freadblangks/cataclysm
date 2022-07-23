@@ -277,10 +277,10 @@ public:
         }
 
         InstanceScript* instance;
-//        Phase phase;
+        //Phase phase;
         EventMap events;
         SummonList summons;
-        
+
         uint32 timerFlameSpirit;
 
         uint64 valionaGUID;

@@ -95,7 +95,6 @@ set(scripts_STAT_SRCS
   ${scripts_ZulAman}
   ${scripts_ZulGurub}
   ${scripts_Zones}
-  
 )
 
 message("  -> Prepared: Eastern Kingdoms")

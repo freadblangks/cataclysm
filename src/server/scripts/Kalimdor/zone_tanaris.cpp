@@ -584,7 +584,7 @@ public:
             if (player)
             {
                 if (Creature* eye = creature->FindNearestCreature(54237, 200.f))
-                {                    
+                {
                     player->CastSpell(player, 99645, true);
 
                     eye->CastSpell(eye, 99632, true);

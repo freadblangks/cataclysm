@@ -58,7 +58,7 @@ enum spells
     SPELL_TABLE_APPEAR               = 69216,
     SPELL_SUMMON_TABLE               = 69218,
     SPELL_CHAIN_REACTION             = 68821,
-    
+
     // NPC_FRYE
     SPELL_THROW_PERFUME              = 68799,
     SPELL_THROW_COLOGNE              = 68841,
@@ -172,7 +172,7 @@ class npc_apothecary_hummel : public CreatureScript
 
                 me->SetCorpseDelay(900); // delay despawn while still fighting baxter or frye
                 summons.DespawnAll();
-                                
+
                 if (Creature* baxter = Creature::GetCreature(*me, instance->GetData64(NPC_BAXTER)))
                     if (!baxter->isAlive())
                         baxter->Respawn(true);
@@ -242,7 +242,7 @@ class npc_apothecary_hummel : public CreatureScript
                     {
                         uint8 i = urand(0, 3);
                         me->SummonCreature(NPC_CRAZED_APOTHECARY, Loc[i], TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30 * IN_MILLISECONDS);
-                        
+
                         if (!firstCrazed)
                         {
                             Talk(SAY_SUMMON_ADDS);
@@ -294,7 +294,7 @@ class npc_apothecary_hummel : public CreatureScript
                 {
                     if (!UpdateVictim())
                         return;
-                    
+
                     if (me->HasUnitState(UNIT_STATE_CASTING))
                         return;
 
@@ -380,7 +380,7 @@ class npc_apothecary_baxter : public CreatureScript
             void Reset() override
             {
                 me->RestoreFaction();
-                me->AddAura(SPELL_IRRESISTIBLE_COLOGNE, me);                
+                me->AddAura(SPELL_IRRESISTIBLE_COLOGNE, me);
                 _waitTimer = 20000;
                 sprayTimer = urand(4000, 7000);
                 chainReactionTimer = urand (10000, 25000);
@@ -631,7 +631,7 @@ class npc_apothecary_frye : public CreatureScript
 
         private:
             InstanceScript* instance;
-            uint32 _targetSwitchTimer; 
+            uint32 _targetSwitchTimer;
             uint32 _waitTimer;
             uint32 _throwTimer;
             uint32 _moveTimer;
@@ -661,7 +661,7 @@ class npc_crazed_apothecary : public CreatureScript
             {
                 DoZoneInCombat();
                 _explodeTimer = urand(8000,10000);
-                if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 150.0f, true))                
+                if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 150.0f, true))
                     me->GetMotionMaster()->MoveFollow(target, 0.0f, float(2 * M_PI*rand_norm()));
                 else
                     me->DespawnOrUnsummon();

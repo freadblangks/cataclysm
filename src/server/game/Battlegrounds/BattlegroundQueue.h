@@ -43,7 +43,7 @@ struct GroupQueueInfo                                       // stores informatio
 {
     std::map<uint64, PlayerQueueInfo*> Players;             // player queue info map
     uint32  Team;                                           // Player team (ALLIANCE/HORDE)
-    uint32  OTeam; 
+    uint32  OTeam;
     BattlegroundTypeId BgTypeId;                            // battleground type id
     bool    IsRated;                                        // rated
     uint8   ArenaType;                                      // 2v2, 3v3, 5v5 or 0 when BG
@@ -82,7 +82,7 @@ class BattlegroundQueue
         void BattlegroundQueueUpdate(uint32 diff, BattlegroundTypeId bgTypeId, BattlegroundBracketId bracket_id, uint8 arenaType = 0, bool isRated = false, uint32 minRating = 0);
         void UpdateEvents(uint32 diff);
 
-        bool FillXPlayersToBG(BattlegroundBracketId bracket_id, Battleground* bg, bool start = false, uint8 minPlayers = 0, uint8 maxPlayers = 0); 
+        bool FillXPlayersToBG(BattlegroundBracketId bracket_id, Battleground* bg, bool start = false, uint8 minPlayers = 0, uint8 maxPlayers = 0);
         typedef std::multimap<size_t, GroupQueueInfo*> QueuedGroupMap;
         int32 PreAddPlayers(QueuedGroupMap m_PreGroupMap, int32 MaxAdd, uint32 MaxInTeam);
         bool CheckCrossFactionMatch(BattlegroundBracketId bracket_id, Battleground* bg, uint8 minPlayers, uint8 maxPlayers);

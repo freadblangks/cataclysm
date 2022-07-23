@@ -145,7 +145,7 @@ public:
     boss_echo_of_sylvanas() : CreatureScript("boss_echo_of_sylvanas") { }
     struct boss_echo_of_sylvanasAI : public BossAI
     {
-        boss_echo_of_sylvanasAI(Creature* creature) : BossAI(creature, BOSS_ECHO_OF_SYLVANAS) 
+        boss_echo_of_sylvanasAI(Creature* creature) : BossAI(creature, BOSS_ECHO_OF_SYLVANAS)
         {
             creature->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_KNOCK_BACK, true);
             creature->ApplySpellImmune(0, IMMUNITY_MECHANIC, MECHANIC_GRIP, true);
@@ -217,7 +217,7 @@ public:
             events.ScheduleEvent(EVENT_BLIGHTED_ARROWS, 16000);
             events.ScheduleEvent(EVENT_DARK_ARROW, 28000);
             events.ScheduleEvent(EVENT_PRE_CALLING_OF_THE_HIGHBORNE, 38000);
-            achievementDone = false; // worldstate update is only client side we need a bool for the achievement script... 
+            achievementDone = false; // worldstate update is only client side we need a bool for the achievement script...
             instance->DoUpdateWorldState(WORLDSTATE_GHOUL_ACHIEVEMENT, 3); // Display achievement as failed until the conditions are met
             _EnterCombat();
         }
@@ -279,7 +279,7 @@ public:
             {
                 me->SetReactState(REACT_AGGRESSIVE);
                 summons.DespawnEntry(NPC_JUMP_TRIGGER);
-            }       
+            }
         }
 
         void UpdateAI(const uint32 diff) override

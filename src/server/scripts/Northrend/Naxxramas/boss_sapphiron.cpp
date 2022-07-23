@@ -157,7 +157,7 @@ class boss_sapphiron : public CreatureScript
             {
                 if (type != POINT_MOTION_TYPE)
                     return;
-                
+
                 if (id == 1)
                     events.ScheduleEvent(EVENT_LIFTOFF, 0);
             }

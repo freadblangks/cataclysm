@@ -408,7 +408,7 @@ bool Quest::IsReported(Player* player) const
 {
     if (!player)
         return false;
-    
+
     uint32 status = 0;
     uint32 count = 0;
     bool finish = false;
@@ -422,6 +422,6 @@ bool Quest::IsReported(Player* player) const
 
     if (status == 1)
         finish = true;
-        
+
     return finish;
 }

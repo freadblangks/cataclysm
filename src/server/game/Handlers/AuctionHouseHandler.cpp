@@ -717,62 +717,59 @@ void WorldSession::HandleAuctionListOwnerItems(WorldPacket& recvData)
 void WorldSession::HandleAuctionListItems(WorldPacket& recvData)
 {
     TC_LOG_DEBUG("network.opcode", "WORLD: Received CMSG_AUCTION_LIST_ITEMS");
-    
+
     std::string searchedname;
     uint8 levelmin, levelmax, usable;
     uint32 listfrom, auctionSlotID, auctionMainCategory, auctionSubCategory, quality;
     uint64 guid;
     bool getAll;
-    
+
     recvData >> guid;
     recvData >> listfrom;                                  // start, used for page control listing by 50 elements
     recvData >> searchedname;
-    
+
     recvData >> levelmin >> levelmax;
     recvData >> auctionSlotID >> auctionMainCategory >> auctionSubCategory;
     recvData >> quality >> usable >> getAll;
     recvData.read_skip<uint8>();
-    
+
     uint8 fcount = (recvData.read<uint8>() - 1 ),filter = recvData.read<uint8>(),sort = recvData.read<uint8>();
     // Unk Bytes
     for (uint8 i = 0; i < fcount; ++i){
         recvData.read_skip<uint8>();
         recvData.read_skip<uint8>();
     }
-    
+
     Creature* creature = GetPlayer()->GetNPCIfCanInteractWith(guid, UNIT_NPC_FLAG_AUCTIONEER);
     if (!creature)
     {
         TC_LOG_DEBUG("network.opcode", "WORLD: HandleAuctionListItems - Unit (GUID: %u) not found or you can't interact with him.", uint32(GUID_LOPART(guid)));
         return;
     }
-    
+
     // remove fake death
     if (GetPlayer()->HasUnitState(UNIT_STATE_DIED))
         GetPlayer()->RemoveAurasByType(SPELL_AURA_FEIGN_DEATH);
-    
+
     AuctionHouseObject* auctionHouse = sAuctionMgr->GetAuctionsMap(creature->getFaction());
-    
+
     //TC_LOG_DEBUG("misc", "Auctionhouse search (GUID: %u TypeId: %u)",, list from: %u, searchedname: %s, levelmin: %u, levelmax: %u, auctionSlotID: %u, auctionMainCategory: %u, auctionSubCategory: %u, quality: %u, usable: %u",
     //  GUID_LOPART(guid), GuidHigh2TypeId(GUID_HIPART(guid)), listfrom, searchedname.c_str(), levelmin, levelmax, auctionSlotID, auctionMainCategory, auctionSubCategory, quality, usable);
-    
+
     WorldPacket data(SMSG_AUCTION_LIST_RESULT, (4+4+4));
     uint32 count = 0;
     uint32 totalcount = 0;
     data << uint32(0);
-    
+
     // converting string that we try to find to lower case
     std::wstring wsearchedname;
     if (!Utf8toWStr(searchedname, wsearchedname))
         return;
-    
+
     wstrToLower(wsearchedname);
-    
-    auctionHouse->BuildListAuctionItems(data, _player,
-                                        wsearchedname, listfrom, levelmin, levelmax, usable,
-                                        auctionSlotID, auctionMainCategory, auctionSubCategory, quality,filter,sort,
-                                        count, totalcount);
-    
+
+    auctionHouse->BuildListAuctionItems(data, _player, wsearchedname, listfrom, levelmin, levelmax, usable, auctionSlotID, auctionMainCategory, auctionSubCategory, quality, filter, sort, count, totalcount);
+
     data.put<uint32>(0, count);
     data << uint32(totalcount);
     data << uint32(300);                                  //unk 2.3.0

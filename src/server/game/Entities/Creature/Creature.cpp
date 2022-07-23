@@ -614,7 +614,7 @@ void Creature::Update(uint32 diff)
                     m_regenTimer -= diff;*/
             m_regenTimer = CREATURE_REGEN_INTERVAL;
             break;
-            
+
         }
         default:
             break;
@@ -1974,7 +1974,7 @@ bool Creature::CanAssistTo(const Unit* u, const Unit* enemy, bool checkfaction /
     // Check if enemy exists
     if (!enemy)
         return false;
-    
+
     if (IsInEvadeMode())
         return false;
 

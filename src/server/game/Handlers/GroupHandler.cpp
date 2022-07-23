@@ -236,7 +236,7 @@ void WorldSession::HandleGroupInviteOpcode(WorldPacket& recvData)
             return;
         }
         // lfg groups cant invite new group members
-        // lfr group invite is temp. enabled until we have found the queue bug... 
+        // lfr group invite is temp. enabled until we have found the queue bug...
         if (group->isLFGGroup() && !group->isLFRGroup())
         {
             SendPartyResult(PARTY_OP_INVITE, "", ERR_LFG_PENDING);
@@ -448,7 +448,7 @@ void WorldSession::HandleGroupUninviteGuidOpcode(WorldPacket& recvData)
                     SendPartyResult(PARTY_OP_UNINVITE, "", res, (sLFGMgr->GetVoteKickCooldownTimer(group->GetGUID()) - time(NULL)));
                     return;
                 }
-                else // offline players have a 60 sec kick protection - our core hold the socket 60 sec alive if there is no socket the timer is over... 
+                else // offline players have a 60 sec kick protection - our core hold the socket 60 sec alive if there is no socket the timer is over...
                     res = ERR_PARTY_RESULT_OK;
             }
         }

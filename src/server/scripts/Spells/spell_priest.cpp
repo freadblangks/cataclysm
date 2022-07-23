@@ -837,7 +837,7 @@ class spell_pri_shadow_word_death : public SpellScriptLoader
                     AddPct(damage, aurEff->GetAmount());
 
                 if (damage < targetHealth)
-                { 
+                {
                     // Priest T13 Shadow 2P Bonus (Shadow Word: Death)
                     if (caster->HasAura(105843, caster->GetGUID()))
                         damage = CalculatePct(damage, 5);

@@ -922,7 +922,7 @@ public:
 
     struct npc_silver_bullet_x_831AI : public ScriptedAI
     {
-        npc_silver_bullet_x_831AI(Creature* creature) : ScriptedAI(creature) 
+        npc_silver_bullet_x_831AI(Creature* creature) : ScriptedAI(creature)
         {
             me->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_SPELLCLICK);
         }

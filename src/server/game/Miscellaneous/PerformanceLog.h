@@ -42,7 +42,7 @@ protected:
 
     uint32 m_totalTime;
     uint32 m_lastTime;
-    
+
     std::stringstream m_times;
     std::stringstream m_info;
 };

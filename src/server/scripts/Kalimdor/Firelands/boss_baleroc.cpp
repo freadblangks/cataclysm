@@ -88,7 +88,7 @@ enum Misc
 {
     EQUIP_DECIMATION_BLADE  = 71082,
     EQUIP_INFERNO_BLADE     = 71138,
-    ACTION_RESTORE_WEAPONS  = 1 
+    ACTION_RESTORE_WEAPONS  = 1
 };
 
 #define GOSSIP_HELLO_ORB    "<Pick up the orb and shake it vigorously.>"

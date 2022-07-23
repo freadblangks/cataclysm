@@ -181,7 +181,7 @@ public:
             go->SetUInt32Value(GAMEOBJECT_FLAGS, 4);
         }
 
-         
+
          void UseLastStatue(GameObject* go)
          {
              go->SummonGameObject(GO_ATALAI_LIGHT2, instance->GetGameObject(GOAtalaiStatue1)->GetPositionX(), instance->GetGameObject(GOAtalaiStatue1)->GetPositionY(), instance->GetGameObject(GOAtalaiStatue1)->GetPositionZ(), 0, 0, 0, 0, 0, 100000);
@@ -193,7 +193,7 @@ public:
              go->SummonGameObject(148838, -488.997f, 96.61f, -189.019f, -1.52f, 0, 0, 0, 0, 100000);
              go->SummonCreature(8580, -480.399f, 96.566f, -189.2f, 6.1979f, TEMPSUMMON_DEAD_DESPAWN, 900000);
          }
-         
+
 
          void SetData(uint32 type, uint32 data)
          {

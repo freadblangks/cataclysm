@@ -210,8 +210,6 @@ void AuthSocket::OnRead()
         { XFER_RESUME,              STATUS_PATCH,       &AuthSocket::_HandleXferResume        },
         { XFER_CANCEL,              STATUS_PATCH,       &AuthSocket::_HandleXferCancel        }
     };
-    
-    
 
     #define MAX_AUTH_LOGON_CHALLENGES_IN_A_ROW 3
     const int AUTH_TOTAL_COMMANDS = sizeof(table)/sizeof(AuthHandler);
@@ -225,7 +223,7 @@ void AuthSocket::OnRead()
             return;
 
         size_t i;
-        
+
         if (_cmd == 16) // REALM_LIST
         {
             ++RealmchallengesInARow;

@@ -98,7 +98,7 @@ enum Spells
     SPELL_HUNTING_CHANNEL                       = 105353, // The Eyes of Peroth'arn are looking for you.
     SPELL_SUMMON_CIRCLE_TRIGGER                 = 105463, // unused
     SPELL_END_EXHAUSTED                         = 105548, // target illidan
-    
+
     // Eye of Perotharn
     SPELL_EASY_PREY                             = 105493,
     SPELL_EASY_PREY_SUMMON                      = 105761,
@@ -687,7 +687,7 @@ public:
         {
             if (me->GetPositionX() > 3449.00f && me->GetPositionX() < 3451.00f)
                 isLeftDemon = false;
-            
+
             if (me->GetPositionZ() <= 190.00f)
                 isPortalOneOrTwoDemon = true;
 
@@ -987,7 +987,7 @@ public:
                         }
                         if (Creature* visual = me->FindNearestCreature(NPC_FEL_CRYSTAL_STALKER, 50.00f))
                             visual->CastSpell(visual, SPELL_ARCANE_EXPLOSION_VISUAL, true);
-                        events.CancelEvent(EVENT_PLAYER_IN_COMBAT_CHECK); 
+                        events.CancelEvent(EVENT_PLAYER_IN_COMBAT_CHECK);
                         events.CancelEvent(EVENT_PLAYER_ALIVE_CHECK);
                         SetCanAttack(false);
                         me->setFaction(ILLIDAN_FACTION_ESCORT);
@@ -996,7 +996,7 @@ public:
                     break;
                 }
                 case ACTION_MOVE_NEXT_PORTAL:
-                {              
+                {
                     if (!me->HasAura(SPELL_ILLIDAN_SHADOWCLOAK))
                     {
                         DoCast(me, SPELL_ILLIDAN_SHADOWCLOAK, true);

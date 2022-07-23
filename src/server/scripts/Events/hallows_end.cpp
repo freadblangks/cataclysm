@@ -1033,7 +1033,7 @@ public:
                     me->GetMotionMaster()->MovePoint(POINT_TELEPORT_TO_CITY, 1695.579f, 592.5800f, 83.1840f);
                 else
                     me->GetMotionMaster()->MovePoint(POINT_TELEPORT_TO_CITY, -9051.566f, 455.046f, 112.8316f);
-            }              
+            }
         }
 
         void OnCharmed(bool /*apply*/) override {}

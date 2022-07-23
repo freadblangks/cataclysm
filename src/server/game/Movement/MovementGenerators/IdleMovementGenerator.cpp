@@ -53,7 +53,7 @@ bool RotateMovementGenerator::Update(Unit* owner, uint32 diff)
 {
     float angle = owner->GetOrientation();
     angle += (float(diff) * static_cast<float>(M_PI * 2) / m_maxDuration) * (m_direction == ROTATE_DIRECTION_LEFT ? 1.0f : -1.0f);
-    angle = G3D::wrap(angle, 0.0f, float(G3D::twoPi())); 
+    angle = G3D::wrap(angle, 0.0f, float(G3D::twoPi()));
 
     owner->SetOrientation(angle);   // UpdateSplinePosition does not set orientation with UNIT_STATE_ROTATING
     owner->SetFacingTo(angle);      // Send spline movement to clients

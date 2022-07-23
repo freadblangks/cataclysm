@@ -150,7 +150,7 @@ public:
 
     struct boss_woe_queen_azsharaAI : public BossAI
     {
-        boss_woe_queen_azsharaAI(Creature* creature) : BossAI(creature, DATA_QUEEN_AZSHARA) 
+        boss_woe_queen_azsharaAI(Creature* creature) : BossAI(creature, DATA_QUEEN_AZSHARA)
         {
             me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_DISABLE_MOVE);
             me->SetReactState(REACT_PASSIVE);
@@ -340,8 +340,8 @@ public:
                             {
                                 if (player->isCharmed() && !player->HasUnitState(UNIT_STATE_CASTING) && player->isAlive())
                                 {
-                                    if (Player* target = player->getVictim() ? 
-                                        ((player->getVictim()->ToPlayer() && player->getVictim()->isAlive() && !player->isCharmed()) ? player->getVictim()->ToPlayer() : SelectRandomTarget(true, player)) 
+                                    if (Player* target = player->getVictim() ?
+                                        ((player->getVictim()->ToPlayer() && player->getVictim()->isAlive() && !player->isCharmed()) ? player->getVictim()->ToPlayer() : SelectRandomTarget(true, player))
                                         : SelectRandomTarget(true, player))
                                     {
                                         player->GetMotionMaster()->MoveChase(target, 0.0f, 0.0f, 0, MOTION_SLOT_CONTROLLED);
@@ -458,7 +458,7 @@ public:
 
     struct npc_woe_fire_mageAI : public ScriptedAI
     {
-        npc_woe_fire_mageAI(Creature* creature) : ScriptedAI(creature) 
+        npc_woe_fire_mageAI(Creature* creature) : ScriptedAI(creature)
         {
             isActive = false;
             me->SetReactState(REACT_PASSIVE);
@@ -661,7 +661,7 @@ public:
 
     struct npc_woe_frost_mageAI : public ScriptedAI
     {
-        npc_woe_frost_mageAI(Creature* creature) : ScriptedAI(creature) 
+        npc_woe_frost_mageAI(Creature* creature) : ScriptedAI(creature)
         {
             isActive = false;
             me->SetReactState(REACT_PASSIVE);

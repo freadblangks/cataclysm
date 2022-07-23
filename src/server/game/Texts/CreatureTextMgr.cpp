@@ -399,7 +399,7 @@ void CreatureTextMgr::SendBroadcast(Creature* source, uint32 id, uint64 whisperg
     SendSound(source, text->SoundId, msgType, whisperguid, range, team, false);
 
     SendEmote(source, text->CreatureTextEmote);
-        
+
     BroadcastTextBuilder builder(source, msgType, id, whisperguid, source->getGender());
     SendChatPacket(source, builder, msgType, whisperguid, range, team);
 }
@@ -410,7 +410,7 @@ void CreatureTextMgr::SendBroadcastGroup(Creature* source, uint32 id, uint64 whi
         return;
 
     std::set<uint32> group = sObjectMgr->GetBroadcastTextGroup(id);
-    
+
     if (!group.empty())
     {
         uint32 textid = Trinity::Containers::SelectRandomContainerElement(group);

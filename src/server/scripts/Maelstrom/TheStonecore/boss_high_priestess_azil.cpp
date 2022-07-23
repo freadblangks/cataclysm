@@ -191,7 +191,7 @@ public:
         {
             if (type != EFFECT_MOTION_TYPE)
                 return;
-            
+
             switch (id)
             {
                 case POINT_PLATFORM:

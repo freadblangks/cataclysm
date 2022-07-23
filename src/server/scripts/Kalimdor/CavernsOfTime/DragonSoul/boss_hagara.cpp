@@ -298,7 +298,7 @@ public:
             me->SetReactState(REACT_AGGRESSIVE);
             me->InterruptNonMeleeSpells(false);
             me->SetControlled(false, UNIT_STATE_ROOT);
-            
+
             if (instance->GetBossState(DATA_HAGARA) != SPECIAL)
                 _Reset();
 
@@ -1176,12 +1176,12 @@ public:
             {
                 if (Unit* channelTarget = ObjectAccessor::GetUnit(*GetCaster(), caster->GetUInt64Value(UNIT_FIELD_CHANNEL_OBJECT)))
                 {
-                    targets.remove_if([caster, channelTarget](WorldObject* target) 
-                    { 
+                    targets.remove_if([caster, channelTarget](WorldObject* target)
+                    {
                         if (target == channelTarget)
                             return false;
 
-                        return !target->IsInBetween(caster, channelTarget, 1.5f); 
+                        return !target->IsInBetween(caster, channelTarget, 1.5f);
                     });
                 }
 

@@ -51,7 +51,7 @@ EndContentData */
 class npc_highlord_demitrian : public CreatureScript
 {
 public:
-    npc_highlord_demitrian() : CreatureScript("npc_highlord_demitrian") 
+    npc_highlord_demitrian() : CreatureScript("npc_highlord_demitrian")
     {
         lastTimeSummoned = 0;
     }

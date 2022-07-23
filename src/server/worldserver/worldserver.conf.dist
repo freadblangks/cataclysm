@@ -2415,7 +2415,7 @@ ArenaLog.ExtendedInfo = 0
 
 #
 #    Arena.Soloqueue.Enable
-#        Description: Enables solo queue (or not...) 
+#        Description: Enables solo queue (or not...)
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 

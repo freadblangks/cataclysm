@@ -108,7 +108,7 @@ enum Points
     MAX_BRANN_WAYPOINTS_INTRO   = 17
 };
 
-Position const AnraphetActivatePos[2] = 
+Position const AnraphetActivatePos[2] =
 {
     {-141.535f, 366.892f, 89.76741f, 3.139857f},
     {-193.656f, 366.689f, 75.91001f, 3.138207f},
@@ -219,7 +219,7 @@ public:
         void DoAction(int32 const action)
         {
             if (action == ACTION_ANRAPHET_INTRO)
-            {                
+            {
                 events.SetPhase(PHASE_INTRO);
                 events.ScheduleEvent(EVENT_ANRAPHET_APPEAR, 6000, 0, PHASE_INTRO);
             }
@@ -239,7 +239,7 @@ public:
                     events.ScheduleEvent(EVENT_ANRAPHET_ACTIVATE, 1500, 0, PHASE_INTRO);
                     me->SetHomePosition(AnraphetActivatePos[1]);
                     break;
-            }                            
+            }
         }
 
         void UpdateAI(uint32 const diff)
@@ -641,7 +641,7 @@ public:
 
             if (ImpaleTimer <= diff)
             {
-                DoCastVictim(SPELL_IMPALE);                
+                DoCastVictim(SPELL_IMPALE);
                 ImpaleTimer = urand(7500, 15000);
             } else ImpaleTimer -= diff;
 

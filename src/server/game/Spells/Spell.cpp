@@ -3337,7 +3337,7 @@ bool Spell::UpdateChanneledTargetList()
         if (Player* modOwner = m_caster->GetSpellModOwner())
             modOwner->ApplySpellMod(m_spellInfo->Id, SPELLMOD_RANGE, range, this);
 
-        // Active channeled Spells have a max range tolerance (around 3m). 
+        // Active channeled Spells have a max range tolerance (around 3m).
         // Verified on WoD Patch 6.2.3
         range += 3.00f;
     }
@@ -6868,7 +6868,7 @@ SpellCastResult Spell::CheckRange(bool strict)
     if (Player* modOwner = m_caster->GetSpellModOwner())
         modOwner->ApplySpellMod(m_spellInfo->Id, SPELLMOD_RANGE, max_range, this);
 
-    // If the cast is done there is a distance tolerance (around 3m). 
+    // If the cast is done there is a distance tolerance (around 3m).
     // Verified on WoD Patch 6.2.3
     if (!strict)
         max_range += 3.00f;

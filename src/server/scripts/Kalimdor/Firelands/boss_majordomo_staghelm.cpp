@@ -384,7 +384,7 @@ class boss_majordomo_staghelm : public CreatureScript
                             DoCast(me, SPELL_FLAME_SCYTE);
 
                         if (events.IsInPhase(PHASE_CAT) && me->GetPower(POWER_ENERGY) == 100)
-                        {      
+                        {
                             Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, casterTargetSelector(me));
 
                             if (!target && me->getVictim())

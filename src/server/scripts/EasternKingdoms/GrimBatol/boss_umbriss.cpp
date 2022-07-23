@@ -258,7 +258,7 @@ class npc_malignant : public CreatureScript
                 {
                     die = true;
                     damage = 0;
-                    
+
                     if (IsHeroic())
                         DoCast(SPELL_MODGUD_MALICE_BUFF);
 

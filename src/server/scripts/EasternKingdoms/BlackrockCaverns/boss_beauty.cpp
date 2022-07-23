@@ -58,7 +58,7 @@ uint32 const Entry[3] =
 
 Position const SummonPositions[3] =
 {
-    { 128.748f, 596.817f, 76.410f, 1.496f }, // Lucky 
+    { 128.748f, 596.817f, 76.410f, 1.496f }, // Lucky
     { 101.233f, 563.508f, 76.803f, 3.985f }, // Buster
     { 84.030f, 595.906f, 76.859f, 2.051f }  // Runty
 };
@@ -67,7 +67,7 @@ class boss_beauty : public CreatureScript
 {
     public:
         boss_beauty() : CreatureScript("boss_beauty") { }
-            
+
         struct boss_beautyAI : public BossAI
         {
             boss_beautyAI(Creature* creature) : BossAI(creature, BOSS_BEAUTY) {}
@@ -157,7 +157,7 @@ class boss_beauty : public CreatureScript
                             break;
                     }
                 }
-                    
+
                 DoMeleeAttackIfReady();
             }
         private:

@@ -2058,7 +2058,7 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
         {
             if (!IsSmart())
                 break;
-            
+
             WorldObject* target = NULL;
             float x, y, z;
 
@@ -2079,7 +2079,7 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
             x = target ? target->GetPositionX() : e.target.x;
             y = target ? target->GetPositionY() : e.target.y;
             z = target ? target->GetPositionZ() : e.target.z;
-           
+
             me->GetMotionMaster()->MovePoint(e.action.MoveToPos.pointId, x, y, z, true, 0.0f, true);
 
             break;

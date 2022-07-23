@@ -3520,7 +3520,7 @@ void WorldObject::DestroyForNearbyPlayers()
         }
         else
             DestroyForPlayer(player);
- 
+
         player->m_clientGUIDs.erase(GetGUID());
     }
 }

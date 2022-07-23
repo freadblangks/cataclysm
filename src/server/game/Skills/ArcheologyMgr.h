@@ -91,7 +91,7 @@ class ArcheologyMgr
                 count(0),
                 time(0)
             {};
-            ResearchHistoryEntry(uint32 guid, uint32 projectId, uint32 count, uint32 time) : 
+            ResearchHistoryEntry(uint32 guid, uint32 projectId, uint32 count, uint32 time) :
                 guid(guid),
                 projectId(projectId),
                 count(count),

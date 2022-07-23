@@ -192,7 +192,7 @@ public:
 
     struct boss_ds_warlord_zonozzAI : public BossAI
     {
-        boss_ds_warlord_zonozzAI(Creature* creature) : BossAI(creature, DATA_WARLORD_ZONOZZ) 
+        boss_ds_warlord_zonozzAI(Creature* creature) : BossAI(creature, DATA_WARLORD_ZONOZZ)
         {
             introDone = false;
         }
@@ -428,7 +428,7 @@ public:
                             me->CastCustomSpell(SPELL_BLACK_BLOOD_OF_GORATH_HEROIC, SPELLVALUE_AURA_STACK, blackBloodStacks, (Unit*)NULL, TRIGGERED_FULL_MASK);
                         else
                             DoCastAOE(SPELL_BLACK_BLOOD_OF_GORATH, true);
-                            
+
                         DoCast(me, SPELL_DARKNESS, true);
                         DoCast(me, SPELL_TANTRUM);
 
@@ -648,7 +648,7 @@ public:
                             zonozz->RemoveAurasDueToSpell(focusedAnger);
                             zonozz->AI()->DoAction(ACTION_START_BLOOD_PHASE);
                             me->DespawnOrUnsummon(1000);
-                        } 
+                        }
                         break;
                     }
                     default:
@@ -676,7 +676,7 @@ public:
 
     struct npc_ds_eye_of_gorathAI : public Scripted_NoMovementAI
     {
-        npc_ds_eye_of_gorathAI(Creature* creature) : Scripted_NoMovementAI(creature) 
+        npc_ds_eye_of_gorathAI(Creature* creature) : Scripted_NoMovementAI(creature)
         {
             me->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_KNOCK_BACK, true);
             me->ApplySpellImmune(0, IMMUNITY_MECHANIC, MECHANIC_GRIP, true);
@@ -726,7 +726,7 @@ public:
 
     struct npc_ds_claw_of_gorathAI : public Scripted_NoMovementAI
     {
-        npc_ds_claw_of_gorathAI(Creature* creature) : Scripted_NoMovementAI(creature) 
+        npc_ds_claw_of_gorathAI(Creature* creature) : Scripted_NoMovementAI(creature)
         {
             me->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_KNOCK_BACK, true);
             me->ApplySpellImmune(0, IMMUNITY_MECHANIC, MECHANIC_GRIP, true);
@@ -780,7 +780,7 @@ public:
 
     struct npc_ds_flail_of_gorathAI : public Scripted_NoMovementAI
     {
-        npc_ds_flail_of_gorathAI(Creature* creature) : Scripted_NoMovementAI(creature) 
+        npc_ds_flail_of_gorathAI(Creature* creature) : Scripted_NoMovementAI(creature)
         {
             me->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_KNOCK_BACK, true);
             me->ApplySpellImmune(0, IMMUNITY_MECHANIC, MECHANIC_GRIP, true);

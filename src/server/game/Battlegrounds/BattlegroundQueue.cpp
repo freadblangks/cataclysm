@@ -956,7 +956,7 @@ void BattlegroundQueue::BattlegroundQueueUpdate(uint32 /*diff*/, BattlegroundTyp
     }
     else if (bgTypeId == BATTLEGROUND_RB)
     {
-        if (GetNextRandomBattleground() == BATTLEGROUND_TYPE_NONE 
+        if (GetNextRandomBattleground() == BATTLEGROUND_TYPE_NONE
             || ((GetNextRandomBattleground() == BATTLEGROUND_AV || GetNextRandomBattleground() == BATTLEGROUND_IC) && time(NULL) > GetRandomBattlegroundDecayTimer()))
         {
             BattlegroundTypeId nextBg = sBattlegroundMgr->GetRandomBG(bgTypeId, GetNextRandomBattleground());
@@ -1148,7 +1148,7 @@ void BattlegroundQueue::BattlegroundQueueUpdate(uint32 /*diff*/, BattlegroundTyp
                         arena->SetArenaMatchmakerRating(   HORDE, hTeam->ArenaMatchmakerRating);
                         InviteGroupToBG(aTeam, arena, ALLIANCE);
                         InviteGroupToBG(hTeam, arena, HORDE);
-                        
+
                         // Mark arena as solo queue arena for EndBattleground handling
                         if (arenaType == ARENA_TYPE_3v3_SOLO)
                             arena->SetIsSoloQueueArena(true);

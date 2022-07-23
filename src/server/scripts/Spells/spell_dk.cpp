@@ -241,7 +241,7 @@ class spell_dk_pillar_of_frost : public SpellScriptLoader
         {
             PrepareAuraScript(spell_dk_pillar_of_frost_AuraScript);
 
-            void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/) 
+            void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
             {
                 Unit* target = GetTarget();
                 if (target->GetDummyAuraEffect(SPELLFAMILY_DEATHKNIGHT, 4919, EFFECT_0))

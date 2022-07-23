@@ -2975,7 +2975,7 @@ bool InstanceMap::AddPlayerToMap(Player* player)
                 if (!groupBind)
                     group->BindToInstance(mapSave, false);
                 else
-                {    
+                {
                     if (playerBind && playerBind->save != mapSave || !playerBind)
                     {
                         // if the group/leader is permanently bound to the instance

@@ -1589,7 +1589,7 @@ public:
             Player* player = summoner->ToPlayer();
             if (!player)
                 return;
-            
+
             /*if (player->IsWatchingMovie())
                 return;*/
 

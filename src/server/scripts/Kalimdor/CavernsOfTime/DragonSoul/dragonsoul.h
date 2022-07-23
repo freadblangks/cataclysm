@@ -267,7 +267,7 @@ enum CreatureIds
     NPC_YSERA                   = 56100,
     NPC_DEATHWING_TAIL          = 56844,
     NPC_DEATHWING_ARM_LEFT      = 57694, // seat 1
-    NPC_DEATHWING_ARM_RIGHT     = 57686, // seat 0 
+    NPC_DEATHWING_ARM_RIGHT     = 57686, // seat 0
     NPC_DEATHWING_WING_LEFT     = 57696, // seat 4
     NPC_DEATHWING_WING_RIGHT    = 57695, // seat 3
     NPC_DEATHWING_HEAD          = 57962, // seat 5

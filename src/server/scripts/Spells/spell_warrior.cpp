@@ -820,13 +820,13 @@ class spell_warr_vigilance : public SpellScriptLoader
 
                 GetTarget()->CastSpell(_procTarget, SPELL_WARRIOR_VIGILANCE_PROC, true, NULL, aurEff);
 
-                // and you gain Vengeance as if 20% of the damage was done to you. 
+                // and you gain Vengeance as if 20% of the damage was done to you.
                 if (_procTarget->GetTypeId() == TYPEID_PLAYER && GetTarget()->GetDistance2d(_procTarget) <= 200.0f)
                 {
-                    float damage = eventInfo.GetDamageInfo()->GetDamage() 
-                        + eventInfo.GetDamageInfo()->GetArmorMitigated() 
-                        + eventInfo.GetDamageInfo()->GetAbsorb() 
-                        + eventInfo.GetDamageInfo()->GetBlock() 
+                    float damage = eventInfo.GetDamageInfo()->GetDamage()
+                        + eventInfo.GetDamageInfo()->GetArmorMitigated()
+                        + eventInfo.GetDamageInfo()->GetAbsorb()
+                        + eventInfo.GetDamageInfo()->GetBlock()
                         + eventInfo.GetDamageInfo()->GetResist();
 
                     damage = CalculatePct(damage, 20);

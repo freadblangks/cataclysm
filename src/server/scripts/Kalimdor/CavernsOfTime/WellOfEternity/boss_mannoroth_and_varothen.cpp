@@ -196,7 +196,7 @@ enum Actions
     ACTION_FIGHT_FINISHED           = 15,
 };
 
-const Position highguardElitePos[2] = 
+const Position highguardElitePos[2] =
 {
     { 3298.469f, -5721.270f, 18.899f, 2.3561f },
     { 3310.100f, -5694.490f, 18.070f, 2.9321f }
@@ -1207,7 +1207,7 @@ public:
                 mannoroth->AI()->DoAction(ACTION_DISABLE_DAMAGE_COUNTER);
             instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
 
-            // WORKAROUND - we are out of time... - maybe some know the real issue... 
+            // WORKAROUND - we are out of time... - maybe some know the real issue...
             // if a unfriedly npc summons the blade the spellclick doesnt work.. we use temp. a friendly trigger npc until the bug is found...
             Position pos(*me);
             if (Creature* trigger = me->SummonCreature(55091, pos, TEMPSUMMON_TIMED_DESPAWN, 5000))
@@ -1347,7 +1347,7 @@ public:
 
     struct npc_woe_varothens_magical_bladeAI : public ScriptedAI
     {
-        npc_woe_varothens_magical_bladeAI(Creature* creature) : ScriptedAI(creature) 
+        npc_woe_varothens_magical_bladeAI(Creature* creature) : ScriptedAI(creature)
         {
         }
 

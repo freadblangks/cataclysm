@@ -646,7 +646,7 @@ void BattlegroundSA::DestroyGate(Player* player, GameObject* go)
                 case BG_SA_BLUE_GATE:
                     if (GateStatus[BG_SA_GREEN_GATE] == BG_SA_GATE_DESTROYED)
                         rewardHonor = false;
-                    else 
+                    else
                         destroyedGates++;
                     break;
                 case BG_SA_RED_GATE:

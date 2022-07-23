@@ -131,7 +131,7 @@ void SoloQueue::Update(const uint32 diff)
             uint32 minMMRRange = std::max(0, int32(ranges.second->ArenaMatchmakerRating - completeRange));
             uint32 maxMMRRange = std::min(int32(ranges.second->ArenaMatchmakerRating + completeRange), 4000);
 
-            if (IsInMmrRange(minMMRRange, maxMMRRange, itr->second->ArenaMatchmakerRating) 
+            if (IsInMmrRange(minMMRRange, maxMMRRange, itr->second->ArenaMatchmakerRating)
                 || IsInMmrRange(minMMRHeal, maxMMRHeal, ranges.second->ArenaMatchmakerRating))
             {
                 playerList.push_back(ranges.second);
@@ -145,7 +145,7 @@ void SoloQueue::Update(const uint32 diff)
             uint32 minMMRMelee = std::max(0, int32(melees.second->ArenaMatchmakerRating - completeRange));
             uint32 maxMMRMelee = std::min(int32(melees.second->ArenaMatchmakerRating + completeRange), 4000);
 
-            if (IsInMmrRange(minMMRMelee, maxMMRMelee, itr->second->ArenaMatchmakerRating) 
+            if (IsInMmrRange(minMMRMelee, maxMMRMelee, itr->second->ArenaMatchmakerRating)
                 || IsInMmrRange(minMMRHeal, maxMMRHeal, melees.second->ArenaMatchmakerRating))
             {
                 playerList.push_back(melees.second);
@@ -179,7 +179,7 @@ void SoloQueue::Update(const uint32 diff)
                     }
                     sBattlegroundMgr->ScheduleQueueUpdate(ginfo->ArenaMatchmakerRating, ARENA_TYPE_3v3_SOLO, bgQueueTypeId, bgTypeId, bracketEntry->GetBracketId());
 
-                    // everything is done - remove players from solo queue 
+                    // everything is done - remove players from solo queue
                     for (SoloQueueInfo* soloInfo : playerList)
                     {
                         if (soloInfo->playerGuid == itr->second->playerGuid)

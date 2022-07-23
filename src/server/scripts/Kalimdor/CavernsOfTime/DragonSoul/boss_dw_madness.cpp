@@ -806,7 +806,7 @@ public:
                 damage = 0;
                 me->RemoveAllAuras();
                 me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
-                
+
                 if (Creature* deathwing = instance->GetCreature(DATA_MADNESS_OF_DEATHWING))
                     deathwing->AI()->DoAction(ACTION_FINISH_FIGHT);
             }
@@ -1254,7 +1254,7 @@ public:
             pct = 75;
         }
 
-        void EnterEvadeMode() 
+        void EnterEvadeMode()
         {
             // this need to be empty
         }

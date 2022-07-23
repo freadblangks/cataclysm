@@ -508,7 +508,7 @@ void BossAI::_JustDied()
         {
             if (instance->instance->IsRaid())
                 instance->SetBindToHardModeDifficulty(instance->instance->GetDifficulty());
-            
+
             instance->SetBossState(_bossId, DONE_HM);
         }
         else

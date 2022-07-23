@@ -1035,7 +1035,7 @@ bool Aura::CanBeSaved() const
         case 104377: // Black Blood of Go'rath
         case 110306: // Black Blood of Go'rath
         case 104378: // Black Blood of Go'rath
-        case 110322: // Black Blood of Go'rath 
+        case 110322: // Black Blood of Go'rath
         case 102951:
         case 103018:
         case 103420:
@@ -2496,7 +2496,7 @@ void UnitAura::FillTargetMap(std::map<Unit*, uint8> & targets, Unit* caster)
             if (GetSpellInfo()->HasAttribute(SPELL_ATTR5_CAN_NOT_TARGET_PETS))
                 if ((*itr)->isPet() || (*itr)->isGuardian())
                     continue;
-            
+
             std::map<Unit*, uint8>::iterator existing = targets.find(*itr);
             if (existing != targets.end())
                 existing->second |= 1<<effIndex;
